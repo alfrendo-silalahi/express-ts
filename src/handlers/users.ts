@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import { CreateUserDto } from "../dtos/create-user.dto";
+import { CreateUserQueryParams } from "../types/query-params";
 
 export const getUsers = (req: Request, res: Response) => {
   res.status(200).json([
@@ -20,3 +22,8 @@ export const getUserById = (req: Request, res: Response) => {
     username: "alfrendo@users.com",
   });
 };
+
+export const createUser = (
+  req: Request<{}, {}, CreateUserDto, CreateUserQueryParams>,
+  res: Response
+) => {};
